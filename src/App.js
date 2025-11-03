@@ -44,7 +44,11 @@ const [isCartOpen, setisCartOpen] = useState(false)
 
   const [showFilter, setShowFilter] = useState(false); 
 
-  const filteredBikes = Bikes.filter(bike  => bike.type === bikeType)
+  // const filteredBikes = Bikes.filter(bike  => bike.type === bikeType)
+  const filteredBikes = Bikes.filter(bike  => {
+    if (bikeType == "all") {return bike}
+    return bike.type === bikeType
+  })
 
   const handleDelete = (id) => {
     const newCart = cart.filter(item => item.id != id)
@@ -118,23 +122,10 @@ const [isCartOpen, setisCartOpen] = useState(false)
  <div className="bikes">
 
 { filteredBikes.map((bike) => (
-   <div className="card">
-    <div className="favorite">
-    <img   width={25} height={25} src="/img/unlike.png" alt="unlike"/>
-    </div>
-         <img width={200} height={300} src  = "/img/bike1.png" /> 
 
-         {bike.name}
-         <div className="cardButtom">
-        <div>
-                  <span>  Цена: </span>
-                  {bike.price}
-            </div>
-            <button className="button" onClick={() => setcart([...cart,bike ]) }  >
-              <img src="ПЛЮС " alt="" />
-            </button>
-         </div>
-      </div>
+  <Card name= {bike.name}  price= {bike.price} onClick = {() => setcart([...cart, bike])   } />
+  
+ 
 ) )  }
 
      
