@@ -1,8 +1,15 @@
+
+
+
+
 export const Cart = (props) => {
-    const {cart,onDelete} = props
+    const {cart,onDelete, onClose } = props
     return(
         <div className="overlay">
         <div className="drawer">
+
+{/* <button className="closeButton" onClick={onClose} /> */}
+  <button className="closeButton" onClick={onClose}>✖</button>
           <h2>Корзина</h2>
 
 

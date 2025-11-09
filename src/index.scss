@@ -140,6 +140,23 @@ header{
 
 }
 
+.closeButton {
+  position: absolute;  /* делает кнопку независимой внутри drawer */
+  top: 10px;           /* отступ сверху */
+  right: 10px;         /* отступ справа */
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #ee0404;      /* цвет крестика */
+  transition: color 0.2s; /* плавное изменение цвета */
+}
+
+.closeButton:hover {
+  color: red;          /* цвет при наведении */
+}
+
+
 .drawer {
 
   position: absolute;
@@ -149,6 +166,8 @@ header{
   background: wheat;
   box-shadow: -10px 4px 24px black;
   padding:30px ;
+
+  
 
   .cartItem{
     overflow: auto;

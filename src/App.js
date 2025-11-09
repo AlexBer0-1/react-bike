@@ -59,7 +59,11 @@ const [isCartOpen, setisCartOpen] = useState(false)
 
 
 
-{isCartOpen && <Cart cart = {cart} onDelete =  {handleDelete}  > </Cart> } 
+{isCartOpen && (
+  <Cart cart = {cart} 
+  onDelete =  {handleDelete} 
+  onClose={() => setisCartOpen(false)}
+  > </Cart> )} 
     
 
     
